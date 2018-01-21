@@ -11,7 +11,8 @@ const glob = require('glob'),
   webpackConfig = require('./webpack.config.base'),
   helpers = require('./helpers'),
   DefinePlugin = require('webpack/lib/DefinePlugin'),
-  env = require('../environment/prod.env');
+  env = require('../environment/prod.env'),
+  CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
   filename: 'css/[name].[contenthash].css',
@@ -26,11 +27,13 @@ const purifyCss = new PurifyCSSPlugin({
   }
 });
 
-webpackConfig.module.rules = [...webpackConfig.module.rules,
+webpackConfig.module.rules = [
+  ...webpackConfig.module.rules,
   {
     test: /\.scss$/,
     use: extractSass.extract({
-      use: [{
+      use: [
+        {
           loader: 'css-loader',
           options: {
             minimize: true,
@@ -72,10 +75,22 @@ webpackConfig.module.rules[0].options = {
   failOnHint: true
 };
 
-webpackConfig.plugins = [...webpackConfig.plugins,
+webpackConfig.plugins = [
+  ...webpackConfig.plugins,
+
+  new CopyWebpackPlugin([
+    // {output}/file.txt
+    {
+      from: {
+        glob: helpers.root('/src/data/*'),
+        dot: true
+      },
+      to: helpers.root('/dist')
+    }
+  ]),
   new CommonsChunkPlugin({
     name: 'vendor',
-    minChunks: function(module){
+    minChunks: function(module) {
       return module.context && module.context.indexOf('node_modules') !== -1;
     }
   }),
