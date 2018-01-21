@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "description": "A Vue.js project",
+  "description": "A Vue Typescript project",
   "version": "1.0.0",
   "author": "msamar",
   "private": true,
@@ -10,20 +10,8 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production npm run clean && npm run compile",
-    "ci:teamcity": "karma --env=tc start karma.coverage.js && npm run coverage:remap",
-    "ci:jenkins": "karma --env=jk start karma.coverage.js && npm run coverage:remap",
-    "clean": "rimraf dist && rimraf coverage",
-    "compile": "webpack --config config/webpack.config.prod.js",
-    "coverage": "npm run coverage:run && npm run coverage:remap && npm run coverage:open",
-    "coverage:open": "opn coverage/html-ts/index.html",
-    "coverage:remap": "remap-istanbul -i coverage/json/coverage-final.json -o coverage/html-ts -t html",
-    "coverage:run": "cross-env NODE_ENV=development karma start karma.coverage.js",
     "dev": "webpack-dev-server --hot --inline",
-    "lint": "tslint src/**/*.ts",
-    "serve": "http-server dist/ -g -o",
-    "test": "cross-env NODE_ENV=development karma start karma.unit.js",
-    "test:debug": "cross-env NODE_ENV=development karma start karma.debug.js",
-    "test:watch": "cross-env NODE_ENV=development karma start karma.unit.js --singleRun=false --auto-watch"
+    "serve": "http-server dist/ -g -o"
   },
   "dependencies": {
     "axios": "^0.17.1",
