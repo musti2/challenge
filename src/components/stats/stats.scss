@@ -1,0 +1,62 @@
+.content h1 {
+  text-align: center;
+}
+
+.content {
+  background-color: #fff;
+  padding: 20px 20px 1px !important;
+}
+
+.uc {
+  padding: 12px 24px;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.cell {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.cell img {
+  height: 12px;
+  width: 12px;
+}
+
+.cell .cap {
+  text-transform: capitalize;
+}
+
+.table-title {
+  font-family: DispatchCond, Lucida Grande, Tahoma, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  padding-bottom: 7px;
+  border-bottom: 2px solid #001f63;
+  color: #001f63;
+  padding-left: 0;
+  font-size: 12px;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+
+.table .header {
+  background: #e6e6e6;
+}
+
+.table .header th {
+  font-family: Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans,
+    Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #696969;
+  border-bottom: 2px solid #dcdcdc;
+  height: 20px;
+}
+
+.updated {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 11px;
+  color: #676767;
+}

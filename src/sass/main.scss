@@ -1,0 +1,129 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
+// colors
+$primary: #042a5c;
+$light: #fff;
+$light-grey: #eaeaea;
+
+// button
+$btn-primary-bg: #27c0fb;
+$btn-border-radius-base: 0px;
+
+// Navbar
+$nav-active: #f7f7f7;
+$navbar-default-bg: $primary;
+$nav-active-color: #01285e;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg: transparent !default;
+$navbar-default-toggle-icon-bar-bg: #fff !default;
+$navbar-default-toggle-border-color: none !default;
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color: #fff !default;
+//** Global background color for active items (e.g., navs or dropdowns).
+$navbar-default-link-color: $light;
+
+$navbar-default-link-hover-color: $nav-active-color;
+$navbar-default-link-hover-bg: $nav-active;
+$navbar-default-link-active-bg: $nav-active;
+$navbar-default-link-active-color: $nav-active-color;
+
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss';
+
+html,
+body,
+#app-main {
+  overflow-y: auto;
+  height: 100%;
+  font-family: Titillium Upright, Trebuchet MS, Lucida Sans Unicode,
+    Lucida Grande, Lucida Sans, Arial, sans-serif;
+}
+
+.container.content {
+  margin-top: 104px;
+}
+
+.logo-container {
+  background-color: $light-grey;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.club-logo {
+  display: inline-flex;
+  height: 40px;
+  padding: 0 1%;
+}
+
+.logos {
+  display: table;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 8px 48px;
+}
+
+.logos li {
+  display: table-cell;
+  margin-left: 0;
+  list-style: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.logos li img {
+  height: 24px;
+  font-size: 2.1875rem;
+  line-height: 0;
+  padding: 0 1%;
+}
+
+.navbar-brand {
+  padding: 6px 15px;
+}
+
+.navbar-default {
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand img {
+  width: 98px;
+  max-height: 54px;
+}
+
+.nav.navbar-nav li {
+  font-size: 16px;
+}
+
+.navbar-collapse.collapse.in ul {
+  margin: 15.5px -15px;
+}
+
+.btn:active,
+.btn:hover,
+.btn.focus {
+  outline: none;
+  border-color: $btn-primary-bg;
+  background-color: $btn-primary-bg;
+}
+
+.rel {
+  position: relative;
+  width: 100%;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+}
+
+.mb {
+  margin-bottom: 16px;
+}
+
+.mb-large {
+  margin-bottom: 24px;
+}

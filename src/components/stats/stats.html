@@ -1,0 +1,60 @@
+<div class="container content">
+  <div class="row">
+
+    <div class="content col-md-12">
+      <div class="mb-large">
+        <button type="button"
+          class="btn btn-primary uc">overall standings</button>
+
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="rel">
+        <h4 class="table-title">TOP FIVE: OVERALL</h4>
+        <span class="updated">
+          <b>
+            LAST UPDATED:
+          </b>
+          Grand Final, Oct 3, 2017</span>
+      </div>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr class="table header">
+            <th>Ratings</th>
+            <th>Player</th>
+            <th>Club</th>
+            <th>Position</th>
+            <th>Trend</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="rating in playerRating$">
+            <th class="cell">
+              <span class="badge">
+                {{rating.overallRating.ranking}}
+              </span>
+            </th>
+            <th class="cell">
+              <a>
+                {{rating.fullName}}
+              </a>
+            </th>
+            <th class="cell">
+              <img v-bind:src="getClubImage(rating.team.teamName)"> {{rating.teamName}}
+            </th>
+            <th class="cell">
+              <span class="cap">{{rating.position}}</span>
+            </th>
+            <th>-</th>
+            <th>
+              {{rating.overallRating.points}}
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+</div>
